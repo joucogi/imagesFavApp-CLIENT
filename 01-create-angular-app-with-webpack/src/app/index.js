@@ -1,1 +1,4 @@
-console.log("Another message!")
+import { log } from "./utils";
+import "./styles.css";
+
+log("alooo!");
