@@ -88,13 +88,13 @@ plugins: [
 
 ### Activating Babel latest features
 
-`npm i -S babel-preset-es2015`
+`npm i -S babel-preset-es2015 babel-preset-stage-2`
 
 **`.babelrc`**
 
 ```
 {
-  "presets": ["es2015"]
+  "presets": [ "es2015", "stage-2" ]
 }
 ```
 
