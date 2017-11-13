@@ -1,12 +1,11 @@
-class MainCtrl {
+class DataService {
   constructor ($http) {
     this.$http = $http
-    this.getPhotos()
   }
 
   getPhotos () {
     this.$http
-      .get('./data/photos.json')
+      .get('/data/photos.json')
       .then(response => response.data.results)
       .then(photos => {
         this.photos = photos
@@ -14,6 +13,6 @@ class MainCtrl {
   }
 }
 
-MainCtrl.$inject = ['$http']
+DataService.$inject = ['$http']
 
-export default MainCtrl
+export default DataService

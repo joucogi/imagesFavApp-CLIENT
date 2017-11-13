@@ -39,8 +39,8 @@
 
     <!-- @begin COMPONENT: grid -->
 
-    <ul class="dynamic-grid" angular-grid="main.photos" grid-width="300" gutter-size="10" ag-id="gallery">
-      <li data-ng-repeat="photo in main.photos" class="grid">
+    <ul class="dynamic-grid" angular-grid="main.data.photos" grid-width="300" gutter-size="10" ag-id="gallery">
+      <li data-ng-repeat="photo in main.data.photos" class="grid">
         <div class="image-container">
           <img ng-src="{{photo.urls.regular}}" class="grid-img" data-actual-width="{{photo.width}}" data-actual-height="{{photo.height}}"
           />
