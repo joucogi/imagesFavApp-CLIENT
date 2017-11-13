@@ -98,7 +98,8 @@ plugins: [
 }
 ```
 
-## Packages `eslint` w/ Visual Code
+### Packages `eslint` & `prettier` w/ Visual Code → `javascript standard`
+
 
 ```
   npm i -S babel-eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard prettier-eslint

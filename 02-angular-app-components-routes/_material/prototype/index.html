@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="http://images-fav.surge.sh/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body ng-controller="MainCtrl" id="top" style="">
+
+    <!-- @begin COMPONENT: navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="http://images-fav.surge.sh/">ImageFavApp</a>
+            <ul class="my-2 my-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- @end COMPONENT: navbar -->
+
+    <main class="container">
+        <form>
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <input value="surf" class="form-control" type="text" placeholder="Search for...">
+                    <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+              </span>
+                </div>
+            </div>
+        </form>
+
+        <!-- @begin COMPONENT: grid -->
+        <ul
+          class="dynamic-grid"
+          angular-grid="photos"
+          grid-width="300"
+          gutter-size="10"
+          ag-id="gallery"
+        >
+          <li data-ng-repeat="photo in photos" class="grid">
+            <div class="image-container">
+              <img ng-src="{{photo.urls.regular}}" class="grid-img" data-actual-width="{{photo.width}}" data-actual-height="{{photo.height}}"
+              />
+              <div class="info-photo">
+                <a ng-href="{{ photo.user.links.html }}" target="_blank" class="author">
+                  <img ng-src="{{ photo.user.profile_image.small }}" class="rounded-circle avatar" alt="">
+                  <span>{{ photo.user.name }}</span>
+                </a>
+                <a ng-href="{{ photo.links.html }}" target="_blank" class="details">
+                  <span class="oi oi-zoom-in"></span>
+                </a>
+                <a ng-href="{{ photo.links.download }}" target="_blank" class="btn btn-light download">
+                  <span class="oi oi-arrow-thick-bottom"></span>
+                </a>
+
+                <a target="_blank" class="btn btn-light like">
+                  <span class="oi oi-heart"></span>
+                </a>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- @end COMPONENT: grid -->
+
+        <a class="back-to-top" href="void:">
+          <span class="oi oi-arrow-thick-top"></span>
+        </a>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="js/angulargrid.js"></script>
+    <script type="text/javascript">
+      angular.module('myApp', ['angularGrid'])
+        .controller('MainCtrl', function($scope, $http) {
+          $http.get('/data/photos.json')
+            .then( response => response.data.results )
+            .then( photos => $scope.photos = photos )
+        })
+    </script>
+</body>
+
+</html>
