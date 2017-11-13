@@ -1,10 +1,10 @@
-# Create Angular App w/ Webpack
+# Create Angular App w/ Webpack
 
-## Settings Webpack
+## 01. Settings Webpack
 
-- https://webpack.js.org/concepts/
+https://webpack.js.org/concepts/
 
-### Basic Setitings (minimal)
+### Basic Setitings (minimal)
 
 **`package.json`**
 
@@ -50,59 +50,76 @@ module.exports = {
 };
 ```
 
-### Adding Loaders for ES2015/CSS/HTML loading from JS
+### Adding Loaders for ES2015/CSS/HTML loading from JS
 
-
-```
-```
-
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
-
-
-    "css-loader": "0.26.1",
-    "raw-loader": "^0.5.1",
-    "file-loader": "^0.9.0",
-    "style-loader": "^0.13.0",
-    "webpack": "2.2.0",
-    "webpack-dev-server": "2.2.0",
-    "extract-text-webpack-plugin": "2.0.0-beta.5",
-    "html-webpack-plugin": "^2.7.1",
-    "rimraf": "^2.5.1",
-
-## Packages `eslint` w/ Visual Code
 
 `npm i -S babel-core babel-loader css-loader raw-loader style-loader extract-text-webpack-plugin`
 
+**`webpack.config.js`**
+
 ```
- module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: [{ loader: "css-loader" }]
-        })
-      },
-      {
-        test: /\.html$/,
-        loader: "raw-loader"
-      }
-    ]
-  },
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      use: "babel-loader",
+      exclude: /node_modules/
+    },
+    {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: "css-loader"
+      })
+    },
+    {
+      test: /\.html$/,
+      use: "raw-loader"
+    }
+  ]
+},
+plugins: [
+  new HtmlWebpackPlugin({ template: "./src/public/index.html" }),
+  new ExtractTextPlugin("styles.css")
+],
 ```
 
+## 02. Extra Settings
 
-    "babel-eslint": "^8.0.2",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "prettier-eslint": "^8.2.1"
+### Activating Babel latest features
+
+`npm i -S babel-preset-es2015`
+
+**`.babelrc`**
+
+```
+{
+  "presets": ["es2015"]
+}
+```
+
+## Packages `eslint` w/ Visual Code
+
+```
+  npm i -S babel-eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard prettier-eslint
+```
+
+**`.eslintrc`**
+
+```
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"
+  ]
+}
+````
+
+**`User Settings Visual Code`**
+```
+{
+  ...
+  "prettier.eslintIntegration": true
+  ...
+}
+```

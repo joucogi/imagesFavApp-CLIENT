@@ -1,4 +1,14 @@
-import { log } from "./utils";
-import "./styles.css";
+import { log } from './utils'
+import './styles.css'
 
-log("alooo!");
+const me = {
+  name: 'juanma',
+  city: 'barcelona'
+}
+
+const him = me
+const you = { ...me }
+
+log(him === me)
+log(you === me)
+log('alooo!')

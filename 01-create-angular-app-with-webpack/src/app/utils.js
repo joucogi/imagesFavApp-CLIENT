@@ -1,4 +1,4 @@
-function log(msg) {
+function log (msg) {
   console.log(msg)
 }
 
