@@ -3,6 +3,11 @@ class MainCtrl {
     this.data = DataService
     this.auth = AuthService
   }
+
+  handleLike (e, idFavorite) {
+    e.preventDefault()
+    this.data.addFavorite(idFavorite)
+  }
 }
 
 MainCtrl.$inject = ['DataService', 'AuthService']

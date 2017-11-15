@@ -16,15 +16,25 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="http://images-fav.surge.sh/">ImageFavApp</a>
-      <ul class="my-2 my-md-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+      <ul class="my-2 my-md-0" style="color:white; list-style: none; cursor: pointer;">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown">
+            <img class="rounded-circle avatar" width="30" ng-src="{{  main.auth.user.picture }}" alt="" >
+            Logged as {{ main.auth.user.name }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown08">
+            <a href="/favorites" class="dropdown-item">Favorites</a>
+          </div>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li> -->
       </ul>
     </div>
   </nav>
   <!-- @end COMPONENT: navbar -->
 
+  
   <main class="container">
     <form ng-submit="main.data.getPhotos()">
       <div class="form-group">
@@ -56,7 +66,7 @@
               <span class="oi oi-arrow-thick-bottom"></span>
             </a>
 
-            <a target="_blank" class="btn btn-light like">
+            <a ng-click="main.handleLike($event, photo.id)" target="_blank" class="btn btn-light like">
               <span class="oi oi-heart"></span>
             </a>
 

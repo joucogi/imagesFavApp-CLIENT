@@ -1,6 +1,7 @@
 class DataService {
-  constructor ($http) {
+  constructor ($http, AuthService) {
     this.$http = $http
+    this.AuthService = AuthService
   }
 
   getPhotos () {
@@ -11,8 +12,17 @@ class DataService {
         this.photos = photos
       })
   }
+
+  addFavorite (idFavorite) {
+    const user_id = this.AuthService.user.sub
+    console.log(idFavorite, user_id)
+    this.$http
+      .post('http://localhost:3000/favorites/' + idFavorite, { user_id })
+      .then(response => response.data.msg)
+      .then(console.log)
+  }
 }
 
-DataService.$inject = ['$http']
+DataService.$inject = ['$http', 'AuthService']
 
 export default DataService
