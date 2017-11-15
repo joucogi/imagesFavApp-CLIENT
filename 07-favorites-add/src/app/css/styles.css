@@ -1,0 +1,164 @@
+/* styles in src/style directory are applied to the whole page */
+body {
+
+}
+
+a {
+  color: #03A9F4;
+}
+
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.avatar {
+  border: 2px solid #DDD;
+  margin-right: 10px;
+}.dynamic-grid {
+  position: relative;
+  display: none;
+}
+
+.dynamic-grid.angular-grid {
+  display: block;
+}
+
+.grid {
+  position: absolute;
+  list-style: none;
+  background: #ffffff;
+  ;
+  box-sizing: border-box;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.grid.ng-leave {
+  -webkit-transition: all ease 400ms;
+  transition: all ease 400ms;
+}
+
+.grid.ng-leave.ng-leave-active {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.grid.ng-enter {
+  -webkit-transition: all ease 400ms;
+  transition: all ease 400ms;
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.grid.ng-enter.ng-enter-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.grid-img {
+  width: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.grid-img.img-loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
+#gallery-wrap {
+  border: 1px solid #ccc;
+  min-height: 1000px;
+}
+
+.grid .image-container {
+  position: relative;
+}
+
+.back-to-top {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-top .oi {
+  font-size: 30px;
+}
+
+.info-photo {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  color: white;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-photo .details {
+  font-size: 30px;
+  color: white;
+}
+
+.info-photo .author {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.info-photo .download {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.info-photo .like {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #AAA !important;
+}
+
+
+.info-photo .like:hover,
+.info-photo .like .true {
+  color: red !important;
+}
+
+.grid:hover .info-photo {
+  visibility: visible;
+}
+
+.grid.favorite {
+  border: 5px solid #000;
+}
