@@ -2,11 +2,12 @@ class DataService {
   constructor ($http, AuthService) {
     this.$http = $http
     this.AuthService = AuthService
+
   }
 
   getPhotos () {
     this.$http
-      .get('https://03-server-proxy-api-unsplash-vdtemyvvjy.now.sh/search/' + this.query)
+      .get(API_URL + '/search/' + this.query)
       .then(response => response.data.results)
       .then(photos => {
         this.photos = photos
@@ -17,7 +18,7 @@ class DataService {
     const user_id = this.AuthService.user.sub
     console.log(idFavorite, user_id)
     this.$http
-      .post('https://03-server-proxy-api-unsplash-vdtemyvvjy.now.sh/favorites/' + idFavorite, { user_id })
+      .post(API_URL + '/favorites/' + idFavorite, { user_id })
       .then(response => response.data.msg)
       .then(console.log)
   }
