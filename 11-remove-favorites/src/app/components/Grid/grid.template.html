@@ -1,0 +1,29 @@
+<ul class="dynamic-grid" angular-grid="grid.photos" grid-width="300" gutter-size="10" ag-id="gallery">
+  <li data-ng-repeat="photo in grid.photos" class="grid">
+    <div class="image-container">
+      <img ng-src="{{photo.urls.regular}}" class="grid-img" data-actual-width="{{photo.width}}" data-actual-height="{{photo.height}}"
+      />
+      <div class="info-photo">
+        <a ng-href="{{ photo.user.links.html }}" target="_blank" class="author">
+          <img ng-src="{{ photo.user.profile_image.small }}" class="rounded-circle avatar" alt="">
+          <span>{{ photo.user.name }}</span>
+        </a>
+        <a ng-href="{{ photo.links.html }}" target="_blank" class="details">
+          <span class="oi oi-zoom-in"></span>
+        </a>
+        <a ng-href="{{ photo.links.download }}" target="_blank" class="btn btn-light download">
+          <span class="oi oi-arrow-thick-bottom"></span>
+        </a>
+
+        <a ng-if='grid.onClickLike' ng-click="grid.onClickLike(photo.id)" target="_blank" class="btn btn-light like">
+          <span class="oi oi-heart"></span>
+        </a>
+
+        <a ng-if='grid.onClickDislike' ng-click="grid.onClickDislike(photo.id)" target="_blank" class="btn btn-light like">
+          <span class="oi oi-delete"></span>
+        </a>
+
+      </div>
+    </div>
+  </li>
+</ul>

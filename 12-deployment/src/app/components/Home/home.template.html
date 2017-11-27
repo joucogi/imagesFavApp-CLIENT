@@ -1,0 +1,21 @@
+<main class="container">
+  <form ng-submit="home.data.getPhotos()">
+    <div class="form-group">
+      <div class="input-group input-group-lg">
+        <input ng-model="home.data.query" value="surf" class="form-control" type="text" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">Go!</button>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <grid 
+    photos="home.data.photos"
+    on-click-like="home.handleClickLike"
+  ></grid>
+
+  <a class="back-to-top" href="void:">
+    <span class="oi oi-arrow-thick-top"></span>
+  </a>
+</main>
