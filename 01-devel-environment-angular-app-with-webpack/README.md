@@ -4,9 +4,9 @@
 
 En esta lección comenzaremos desde cero nuestro cliente, creando nuestro `package.json`, instalando nuestas primeras dependencias y configurando webpack para poder importar módulos JS ES2015 y lanzar nuestro servidor local que se recargará automaticamente cuando grabemos.
 
-![Webpack Configuración Básica](./md_img/Webpack1.png)
+![Webpack Configuración Básica](./md_img/Webpack1.png)  
 
-### Ideas Claras
+### Ideas Claras
 
 - Para crear nuestro `package.json` vacio hacemos `npm init -y`
 - Para instalar webpack y añadirlo como dependencia al `package.json` hacemos `npm i -S webpack`
