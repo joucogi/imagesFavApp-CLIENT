@@ -1,7 +1,8 @@
-# Favorites Add 
+# Añadir Favoritos
 
-## Add Default Logged User
+## Añadimos la lógica del usuario logeado
 
+** `navbar` **
 ```
  <ul class="my-2 my-md-0" style="color:white; list-style: none; cursor: pointer;">
     <li class="nav-item dropdown">
@@ -19,7 +20,7 @@
   </ul>
 ```
 
-
+** `user.json` **
 ```
 {
   "sub": "twitter|69764534",

@@ -1,6 +1,6 @@
-# Favorites Add 
+# Componentizando
 
-## Component structure
+## Estructura componente `navbar`
 
 ```
 import angular from 'angular';
@@ -47,3 +47,9 @@ angular.module(MODULE_NAME, []).component('grid', GridComponent)
 
 export default MODULE_NAME
 ````
+
+## Recursos 
+
+- https://carlosazaustre.es/desarrollo-por-componentes-con-angular-1-5-con-es6-es2015/
+- http://blog.krawaller.se/posts/dissecting-bindings-in-angularjs/
+- https://toddmotto.com/exploring-the-angular-1-5-component-method/

@@ -27,8 +27,9 @@ new webpack.DefinePlugin({
 
 ** package.json ** 
 
+```
 "build": "rimraf dist && NODE_ENV=production webpack --progress",
-
+```
 
 --------
 
@@ -38,6 +39,16 @@ Manging
 
 El concepto de manging se refiere a cambiar el nombre de las variables por un nombre más corto con la finalidad de reducir un poco más el tamaño del archivo. 
 
+```
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 new UglifyJsPlugin({ uglifyOptions: 
   { mangle: false }
 })
+```
+
+## Resources
+
+- https://zeit.co/now (frontend & backend deployments) [[1]](https://github.com/zeit/now-cli/issues/677)
+- https://www.heroku.com/ (mayormente backend deployments)
+- http://surge.sh/ (mayormente frontend deployments)
