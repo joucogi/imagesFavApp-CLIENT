@@ -16,7 +16,7 @@ Para empezar a "modularizar" nuestra app AngularJS instalamos las primeras depen
 
 En nuestro `index.js` cargamos estas dependencias, los estilos y configuramos nuestra app angular con el servicio y controlador que cargaremos también desde archivos aparte
 
-** `index.js`**
+**`index.js`**
 ```
 import angular from 'angular'
 import angularGrid from 'angulargrid'
