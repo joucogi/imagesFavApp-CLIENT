@@ -7,7 +7,7 @@ class DataService {
   }
 
   async getPhotos () {
-    const url = 'https://03-server-proxy-api-unsplash-vdtemyvvjy.now.sh/search/' + this.query
+    const url = 'http://localhost:3000/search/' + this.query
     const { data: { results: photos }} = await this.$http.get(url)
     this.photos = photos
   }
@@ -15,7 +15,7 @@ class DataService {
   async addFavorite (idFavorite) {
     const user_id = this.AuthService.user.sub
     console.log(idFavorite, user_id)
-    const url = 'https://03-server-proxy-api-unsplash-vdtemyvvjy.now.sh/favorites/' + idFavorite
+    const url = 'http://localhost:3000/favorite/' + idFavorite
     const data = { user_id }
     const { data: msg } = await this.$http.post(url, data)
     console.log(msg)

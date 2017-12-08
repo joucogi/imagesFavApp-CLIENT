@@ -18,7 +18,7 @@ class DataService {
     const user_id = this.AuthService.user.sub
     console.log(idFavorite, user_id)
     this.$http
-      .post(API_URL + '/favorites/' + idFavorite, { user_id })
+      .post(API_URL + '/favorite/' + idFavorite, { user_id })
       .then(response => response.data.msg)
       .then(msg => {
         console.log(msg)
@@ -32,7 +32,7 @@ class DataService {
       headers:  { user_id }
     }
     this.$http
-      .delete(API_URL + '/favorites/' + idFavorite, config)
+      .delete(API_URL + '/favorite/' + idFavorite, config)
       .then(response => response.data.msg)
       .then(msg => {
         console.log(msg)
