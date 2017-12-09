@@ -81,18 +81,35 @@ Este metodo `getFavorites` lo llamaremos nada más arrancar la app angular con l
 
 # Añadir rutas
 
-## Instalamos y configuramos `angular-route`
+En esta lección vamos a crear las rutas `/` y `/favorites` en el cliente que nos mostraran la home y los favoritos del usuario respectivamente
+
+![favoritos cliente](./md_img/favoritos-cliente.png)
+
+## Instalamos `angular-route` y configuramos las rutas con `$routeProvider`
+
+Instalamos `angular-route` (haciendo `npm i -S angular-route`) y lo añadimos como dependencia en nuestro modulo.
+
+En el `config` de nuestro modulo principal definimos las rutas. Cómo ya lo tenemos todo componentizado, nuestras rutas se definen tan fácil como esto...
 
 ```
-npm i -S angular-route
+import ngRoute from 'angular-route'
+
+...
+
+angular
+  .module(MODULE_NAME, [
+    ngRoute,
+    ...
+  ])
+  .config( function ($routeProvider) {
+    $routeProvider
+      .when('/', { template: '<app></app>' })
+      .when('/favorites', { template: '<favorites></favorites>' })
+
+  })
 ```
 
+Para que `angular-route` cargue el contenido adecuado segun la ruta ponemos en el html...
 ```
-.config( function ($routeProvider) {
-  $routeProvider
-    .when('/', { template: '<app></app>' })
-    .when('/favorites', { template: '<favorites></favorites>' })
-
-})
-
+<ng-view></ng-view>
 ```
