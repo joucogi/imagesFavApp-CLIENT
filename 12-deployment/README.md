@@ -6,7 +6,7 @@ En esta lección vamos a hacer el _deployment_ (subir a producción) nuestro pro
 
 _Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
 
-## Preparando nuestra app para que maneje url's diferentes en desarrollo y en producción
+## Preparando nuestra app para que maneje url's diferentes en desarrollo y en producción
 
 A través de webpack podemos "inyectar" variables en nuestra app que tengan valores diferentes según diferentes entornos
 
@@ -62,7 +62,7 @@ getPhotos () {
 }
 ```
 
-## Comprimiendo (reduciendo tamaño) el _bundle_ generado por webpack
+## Comprimiendo (reduciendo tamaño) el _bundle_ generado por webpack
 
 Para comprimir el archivo aplicamos el plugin [`uglifyjs-webpack-plugin`](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/)
 
@@ -74,7 +74,7 @@ new UglifyJsPlugin({ uglifyOptions:
 })
 ```
 
-## Subiendo el cliente a produccion
+## Subiendo el cliente a produccion
 
 Para subir a produccion el cliente, generamos el _bundle_ final con `npm run build`, nos vamos a la carpeta `dist` y una vez dentro hacemos...
 
@@ -84,7 +84,7 @@ now --static
 
 Esto subirá nuestro código a los servidores de now, lanzará un servidor de archivos estáticos y nos devolverá la URL a partir de la cual podremos acceder a nuestra app subida
 
-## Resources
+## Recursos
 
 - https://zeit.co/now (frontend & backend deployments) [[1]](https://github.com/zeit/now-cli/issues/677)
 - https://www.heroku.com/ (mayormente backend deployments)
