@@ -2,7 +2,10 @@
 
 En esta lección vamos a añadir la lógica en nuestra app angular para que añada los favoritos al usuario logueado. Para ello emularemos un usuario logueado a través de un servicio nuevo que llamaremos `AuthService`
 
-![mean flow](./md_img/mean.png)
+[![mean flow](./md_img/mean.png)](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack)
+
+_Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
+
 
 ## Añadimos la lógica del usuario logeado
 

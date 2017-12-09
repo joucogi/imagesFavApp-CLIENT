@@ -2,7 +2,9 @@
 
 En esta lección vamos a hacer el _deployment_ (subir a producción) nuestro proyecto, tanto la parte de cliente como la de servidor realizando antes algunos ajustes para que nuestra app maneje URL's diferentes según el entorno en el que esté
 
-![now](./md-img/now.png)
+[![now](./md-img/now.png)](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack)
+
+_Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
 
 ## Preparando nuestra app para que maneje url's diferentes en desarrollo y en producción
 
@@ -22,7 +24,7 @@ Para ello creamos primero un `config.json` con los posibles valores de `API_URL`
 
 Y en nuestro `webpack.config.js` cargamos este `config.js` para asignarle a `API_URL` el valor adecuado según el valor de una variable de entorno `NODE_ENV`
 
-A través del plugin [`DefinePlugin`](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) podemos dejar disponible esta variable `API_URL` en nuestra app
+A través del plugin [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) podemos dejar disponible esta variable `API_URL` en nuestra app
 
 **`webpack.config.js`** 
 

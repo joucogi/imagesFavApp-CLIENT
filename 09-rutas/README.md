@@ -2,7 +2,9 @@
 
 En esta lección vamos a crear el componente `favorites` que mostrará las fotos favoritas del usuario logueado
 
-![favoritos cliente](./md_img/favoritos-cliente.png)
+[![favoritos cliente](./md_img/favoritos-cliente.png)](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack)
+
+_Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
 
 ## Creando el componente `favorites`
 

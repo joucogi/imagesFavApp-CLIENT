@@ -2,7 +2,10 @@
 
 En esta lección vamos a convertir el prototipo de la app que nos viene dado en HTML raso, a una aplicación modular gestionada por webpack. Para ello instalaremos las dependencias y crearemos los archivos adecuados, para cargarlos a traves de nuestro `index.js`
 
-![angular con webpack](./md_img/angular_con_webpack.png)
+[![angular con webpack](./md_img/angular_con_webpack.png)](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack)
+
+_Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
+
 
 ## Probando nuestro prototipo
 

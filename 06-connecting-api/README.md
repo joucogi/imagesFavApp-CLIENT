@@ -2,7 +2,9 @@
 
 En esta lección prepararemos nuestro servidor para que acepte peticiones de cualquier dominio y modificaremos nuestra app angular para utilize el endpoint `search/:query` que tenemos creado en el servidor y que devuelve las imagenes buscadas utilizando la API de unsplash y cacheando los resultados
 
-![cors](./md_img/cors.png)
+[![cors](./md_img/cors.png)](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack)
+
+_Esta lección corresponde al curso [Crea una app MEAN profesional con AngularJS y Webpack](https://pro.codely.tv/library/crea-una-app-mean-profesional-con-angularjs-y-webpack) disponible a través de [CodelyTV](https://pro.codely.tv/)_
 
 ## Preparando el servidor con `cors`
 
